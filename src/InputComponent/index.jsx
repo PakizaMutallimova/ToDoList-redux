@@ -5,13 +5,12 @@ import { setToDo } from '../features/toDoListDone/toDoListSlice'
 
 const InputComponent = () => {
   const [data, setData] = useState('')
-  const toDoSelector = useSelector((state)=>state.counter.toDoList)
-  console.log(toDoSelector);
+
   const dispatch = useDispatch()
 
   function catchInputValue(e) {
     setData(e.target.value)
-    console.log(e.target.value);
+    // console.log(e.target.value);
   }
   function addToDoList() {
     dispatch(setToDo(data))
