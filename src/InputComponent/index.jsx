@@ -9,11 +9,13 @@ const InputComponent = () => {
   const dispatch = useDispatch()
 
   function catchInputValue(e) {
-    setData(e.target.value)
-    // console.log(e.target.value);
+      setData(e.target.value)
   }
-  function addToDoList() {
-    dispatch(setToDo(data))
+  function addToDoList(e) {
+    if(data.trim()){
+      dispatch(setToDo(data))
+      setData(e.target.value = "")
+    }
   }
   return (
     <div className={styles.container}>

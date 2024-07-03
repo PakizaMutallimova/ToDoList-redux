@@ -17,15 +17,13 @@ const TodoList = () => {
     <div className={styles.todoList}>
       <div>
         <div className='todolist flex justify-center p-3 flex-col'>
-          {toDoSelector.map(listItem => {`<div className="w-full flex justify-between">
-            <p className='text-xl text-red-200'>${listItem}</p>
+          {toDoSelector.map((listItem, index) =><div key={"pr" + index} className="w-full flex justify-between">
+            <p className='text-xl text-red-200'>{listItem}</p>
             <div>
               <ClearIcon className='text-red-200' />
               <DeleteIcon className='text-red-200' />
             </div>
-          </div>`})}
-          
-          
+          </div>)}
         </div>
       </div>
     </div>
